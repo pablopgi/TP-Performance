@@ -19,11 +19,18 @@ class EmployeeDAO {
 		session.createCriteria(Employee).list() as List<Employee>
 	}
 	
-	//aca puedo obtener los 10 empleados con mayores sueldos
 
 	def getByCode(int id) {
 		val session = SessionManager.getSession()
 		session.load(Employee, id) as Employee
+	}
+	
+	//aca puedo obtener los 10 empleados con mayores sueldos
+	def getPorSalarios() {
+		val session = SessionManager.getSession()
+		val query = session.createQuery("Select s.employee From Salary s Order By s.amount")
+		query.setMaxResults = 10
+		query.list as List<Employee>
 	}
 
 }
