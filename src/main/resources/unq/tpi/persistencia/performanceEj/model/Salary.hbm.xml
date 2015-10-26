@@ -6,7 +6,7 @@
 	<class name="unq.tpi.persistencia.performanceEj.model.Salary" table="salaries">
 		
 		<composite-id>
-			<key-many-to-one name="employee" column="emp_no" />
+			<key-many-to-one name="employee" column="emp_no"/>
 			<key-property name="from" column="from_date" />
 		</composite-id>
 

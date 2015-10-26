@@ -18,6 +18,8 @@ class EmployeeDAO {
 		val session = SessionManager.getSession()
 		session.createCriteria(Employee).list() as List<Employee>
 	}
+	
+	//aca puedo obtener los 10 empleados con mayores sueldos
 
 	def getByCode(int id) {
 		val session = SessionManager.getSession()
