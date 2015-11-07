@@ -12,7 +12,7 @@ class ListadoPagosPorDepto extends AbstractListado {
 	}
 
 	override def doListado() throws Exception {
-		val depto = new DepartmentDAO().getByCode(this.num)
+		val depto = new DepartmentDAO().getByCodeAndSalaries(this.num).get(0)
 
 		newLine()
 		addColumn("Total").addColumn(depto.totalSalaries).newLine()

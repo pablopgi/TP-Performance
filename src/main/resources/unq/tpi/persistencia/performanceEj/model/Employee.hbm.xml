@@ -40,7 +40,7 @@
 			<element column="title" type="java.lang.String" />
 		</set>
 
-		<bag name="historicTitles" table="titles" where="to_date != '9999-01-01'" order-by="from_date">
+		<bag name="historicTitles" table="titles" where="to_date != '9999-01-01'" order-by="from_date" lazy="true">
 			<key column="emp_no" />
 			<element column="title" type="java.lang.String" />
 		</bag>
